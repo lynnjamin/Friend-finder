@@ -8,7 +8,8 @@ app.listen(PORT, function() {
    });
    
 
-// routes to files
+//function app imported to get and post friends data
    require("./routing/apiRoutes")(app);
+//function app imported  to link home and survey pages
    require("./routing/htmlRoutes")(app);
    
