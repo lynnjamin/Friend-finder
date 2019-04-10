@@ -297,8 +297,8 @@
             </div>
            
            
-                <div> 
-                <button type="button" class="btn btn-success btn-lg btn-block" id="submit" data-toggle="modal" data-target="#exampleModal"><span class="fas fa-check-circle"></span> Ready to see your friend? Click here.</button>
+                <div> data
+                <button type="button" class="btn btn-success btn-lg btn-block" id="submit"><span class="fas fa-check-circle"></span> Ready to see your friend? Click here.</button>
                 </form>
                 </div>
 
@@ -344,12 +344,26 @@
                 $('input:checked').each(function(){
                   userAnswers.push($(this).val());
                 });
-
                 userArray['score'] = userAnswers;
                 console.log(userArray);
+
+
+                // sending to apiRoutes
+                $.post("/api/friends", userArray)
+                .then(function(data) {
+                userArray['name'] = $("#nameinput").val().trim();
+                userArray['image'] = $("#linktophoto").val().trim();
+                userArray['score'] = userAnswers;
+                $('#exampleModal').modal('show');
+                  })
                 })
-              
-             
+
+                // var newFriend = {
+                //   name: $("#nameinput").val().trim(),
+                //   photo: $("#linktophoto").val().trim()
+                // }
+
+                // sending post to apiRoute.js
             
             
                 </script>

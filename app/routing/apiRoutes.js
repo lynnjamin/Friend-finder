@@ -12,7 +12,7 @@ module.exports = function(app) {
    
   // view list of friends
      app.get("/api/friends", function(req, res) {
-      console.log(res)
+       console.log(res)
        res.json(friendsArray);
      });
    
@@ -20,6 +20,17 @@ module.exports = function(app) {
  // add friends
      app.post("/api/friends", function(req, res) {
 
+      var userTotal = [];
+      var friendTotal = [];
+
+    for (var i = 0; i < friendsArray.length; i++){
+      console.log(friendsArray[i].score)
+      for (var j = 0; j < friendsArray[i].score.length; j++){
+        console.log(friendsArray[i].score[j]);
+      
+    }
+  }
+ 
   });
 
 
