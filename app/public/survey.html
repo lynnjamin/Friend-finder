@@ -338,24 +338,22 @@
                 var userArray= {};
                 
                 userArray['name'] = $("#nameinput").val().trim();
-                userArray['image'] = $("#linktophoto").val().trim();
+                userArray['photo'] = $("#linktophoto").val().trim();
                 
                 var userAnswers = [];
                 $('input:checked').each(function(){
                   userAnswers.push($(this).val());
                 });
-                userArray['score'] = userAnswers;
+                userArray['scores'] = userAnswers;
                 console.log(userArray);
 
 
-                // sending to apiRoutes
+                // sending to apiRoutes // BUT Y U UNDEFINED??
                 $.post("/api/friends", userArray)
                 .then(function(data) {
-                userArray['name'] = $("#nameinput").val().trim();
-                userArray['image'] = $("#linktophoto").val().trim();
-                userArray['score'] = userAnswers;
-                $('#exampleModal').modal('show');
+                  console.log(data)
                   })
+
                 })
 
               

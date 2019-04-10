@@ -12,26 +12,17 @@ module.exports = function(app) {
    
   // view list of friends
      app.get("/api/friends", function(req, res) {
-       console.log(res)
        res.json(friendsArray);
      });
    
 
- // add friends
+     ///// PROBLEM HERE /////
+     //sending back req.body but it is undefined
      app.post("/api/friends", function(req, res) {
+      res.send(req.body);
+      console.log(req.body);
+       
 
-      var userTotal = [];
-      var friendTotal = [];
-
-    for (var i = 0; i < friendsArray.length; i++){
-      console.log(friendsArray[i].score)
-      for (var j = 0; j < friendsArray[i].score.length; j++){
-        console.log(friendsArray[i].score[j]);
-      
+      // cannot write the logic to compare without getting post to link
+     })
     }
-  }
- 
-  });
-
-
-}
