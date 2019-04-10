@@ -9,7 +9,7 @@ app.listen(PORT, function() {
    
 
 //function app imported to get and post friends data
-   require("./routing/apiRoutes")(app);
+   require("./app/routing/apiRoutes")(app);
 //function app imported  to link home and survey pages
-   require("./routing/htmlRoutes")(app);
+   require("./app/routing/htmlRoutes")(app);
    
